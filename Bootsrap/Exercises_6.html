@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6 - Flexbox Utilities</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Exercise 6.1 – Responsive Navbar with Flexbox -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark px-3">
+  <a class="navbar-brand" href="#">MyBrand</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navMenu">
+    <!-- d-flex flex-column flex-md-row is applied by navbar internals -->
+    <ul class="navbar-nav me-auto d-flex flex-column flex-md-row">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Exercise 6.2 – Card with justify-content-between & align-items-center -->
+<div class="container mt-5">
+  <h4>Exercise 6.2 – Flex Card with justify-content-between</h4>
+  <div class="card mt-3">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <h5 class="card-title mb-0">Product Name</h5>
+        <small class="text-muted">In Stock</small>
+      </div>
+      <div>
+        <span class="fs-4 fw-bold text-success">$29.99</span>
+      </div>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

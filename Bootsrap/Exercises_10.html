@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 10 - Navbars and Navigation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Exercise 10.1 – Responsive Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+  <a class="navbar-brand fw-bold" href="#">MyLogo</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="mainNav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Web Design</a></li>
+          <li><a class="dropdown-item" href="#">SEO</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+    <form class="d-flex gap-2">
+      <input class="form-control" type="search" placeholder="Search">
+      <button class="btn btn-light" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container mt-5">
+
+  <!-- Exercise 10.2 – Tabs and Pills -->
+  <h2>Exercise 10.2 – nav-tabs</h2>
+  <ul class="nav nav-tabs mt-3" id="myTab">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">Home</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Profile</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">Settings</button></li>
+  </ul>
+  <div class="tab-content border border-top-0 p-3">
+    <div class="tab-pane fade show active" id="tab1">Home tab content goes here.</div>
+    <div class="tab-pane fade" id="tab2">Profile tab content goes here.</div>
+    <div class="tab-pane fade" id="tab3">Settings tab content goes here.</div>
+  </div>
+
+  <h2 class="mt-5">nav-pills</h2>
+  <ul class="nav nav-pills mt-3" id="myPills">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pill1">Home</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pill2">Profile</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pill3">Messages</button></li>
+  </ul>
+  <div class="tab-content mt-3">
+    <div class="tab-pane fade show active" id="pill1">Home pill content.</div>
+    <div class="tab-pane fade" id="pill2">Profile pill content.</div>
+    <div class="tab-pane fade" id="pill3">Messages pill content.</div>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

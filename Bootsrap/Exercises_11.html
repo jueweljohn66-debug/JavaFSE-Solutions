@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11 - Cards and Media Objects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+
+  <h2>Exercise 11.1 – Profile Card</h2>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="https://via.placeholder.com/400x200?text=Profile+Photo" class="card-img-top" alt="Profile">
+        <div class="card-body text-center">
+          <h5 class="card-title">John Doe</h5>
+          <p class="card-text text-muted">Full Stack Developer</p>
+          <p class="card-text"><small class="text-muted">📍 Kerala, India</small></p>
+          <button class="btn btn-primary btn-sm">Follow</button>
+          <button class="btn btn-outline-secondary btn-sm">Message</button>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between"><span>Posts</span><strong>120</strong></li>
+          <li class="list-group-item d-flex justify-content-between"><span>Followers</span><strong>4.5K</strong></li>
+          <li class="list-group-item d-flex justify-content-between"><span>Following</span><strong>300</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <h2>Exercise 11.2 – Media Object Layout</h2>
+  <!-- Bootstrap 5 uses d-flex for media objects -->
+  <div class="d-flex mt-3 gap-3">
+    <img src="https://via.placeholder.com/80x80?text=IMG" class="rounded" alt="Media Image" style="width:80px;height:80px;object-fit:cover;">
+    <div>
+      <h5 class="mt-0">Media Heading</h5>
+      <p>This is a media object layout using d-flex. The image is aligned to the left, and the text content appears to the right of it. Bootstrap 5 removed the .media class — use flexbox utilities instead.</p>
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm btn-outline-primary">Like</button>
+        <button class="btn btn-sm btn-outline-secondary">Reply</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5 - Alignment and Reordering</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .box { background: #6f42c1; color: white; padding: 20px; text-align: center; border-radius: 6px; }
+    .row-demo { min-height: 120px; background: #f8f9fa; border: 1px dashed #ccc; border-radius: 6px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+<div class="container mt-4">
+  <h2>Exercise 5.1 – Centering with justify-content-center &amp; align-items-center</h2>
+  <div class="row justify-content-center align-items-center row-demo mt-3">
+    <div class="col-auto"><div class="box">Centered Box</div></div>
+    <div class="col-auto"><div class="box">Centered Box</div></div>
+  </div>
+
+  <h2 class="mt-4">Exercise 5.2 – Column Reordering with order-md-*</h2>
+  <p>On desktop: "Second" appears first, "First" appears second.</p>
+  <div class="row g-3 mt-2">
+    <div class="col-md-6 order-md-2"><div class="box" style="background:#dc3545;">First in HTML — appears SECOND on desktop</div></div>
+    <div class="col-md-6 order-md-1"><div class="box" style="background:#198754;">Second in HTML — appears FIRST on desktop</div></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

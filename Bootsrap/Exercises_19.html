@@ -1,0 +1,59 @@
+<!-- Exercise 19 - Sass Customization -->
+<!--
+  NOTE: Sass requires a build tool (npm). Below is the code structure.
+  Follow these steps to set up:
+
+  STEP 1: Initialize project
+    npm init -y
+    npm install bootstrap sass
+
+  STEP 2: Create custom.scss with this content (see below)
+
+  STEP 3: Compile with:
+    npx sass custom.scss custom.css
+
+  STEP 4: Link custom.css in your HTML instead of Bootstrap CDN
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 19 - Sass Customization</title>
+  <!-- After compiling, link your custom CSS here -->
+  <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="text-primary">Custom Primary Color</h1>
+  <p class="lead">The primary color has been changed via Sass variables.</p>
+  <button class="btn btn-primary">Custom Button</button>
+  <div class="card mt-4 p-3">
+    <p>Card with custom border-radius</p>
+  </div>
+</div>
+</body>
+</html>
+
+<!--
+========== custom.scss (Exercise 19.2) ==========
+
+// Override Bootstrap variables BEFORE importing Bootstrap
+$primary: #e63946;           // Change primary color to red
+$secondary: #457b9d;         // Change secondary to steel blue
+$border-radius: 0.75rem;     // Larger rounded corners
+$font-family-base: 'Georgia, serif';
+
+// Then import all of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Add your own custom styles below
+body {
+  background-color: #f1faee;
+}
+
+=================================================
+
+Run: npx sass custom.scss custom.css
+-->

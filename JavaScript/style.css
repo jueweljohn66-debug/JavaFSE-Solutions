@@ -1,0 +1,56 @@
+/* style.css – Community Event Portal */
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Event Cards */
+.event-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+/* Category Badge Colors */
+.badge-music    { background-color: #7c3aed; }
+.badge-workshop { background-color: #0891b2; }
+.badge-sports   { background-color: #16a34a; }
+.badge-food     { background-color: #ea580c; }
+.badge-tech     { background-color: #1d4ed8; }
+
+.event-card .card-header {
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.seat-count {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.seat-count.low { color: #dc2626; font-weight: 600; }
+
+/* Spinner */
+#loadingSpinner { min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* Form feedback */
+.form-control.is-invalid, .form-select.is-invalid {
+  border-color: #dc3545;
+}
+
+/* Search highlight */
+.highlight { background-color: #fef08a; border-radius: 3px; padding: 0 2px; }
+
+/* Fade animation for jQuery (Exercise 14) */
+.event-col { display: block; }
