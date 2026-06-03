@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>City Council Community Portal</title>
+
+  <!-- Task 5: Google Font via link -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+
+  <!-- Task 1: External stylesheet -->
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Task 1: Embedded internal style -->
+  <style>
+    /* Internal style — body background (Task 1) */
+    body {
+      background-color: #f4f6f8;
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 3: ID selector #mainHeader -->
+  <header id="mainHeader">
+    <!-- Task 1: Inline style — red heading -->
+    <h1 style="color: red;">City Council Community Portal</h1>
+    <p>Your hub for local events, news, and services</p>
+
+    <!-- Task 6: Nav with unstyled list -->
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#events">Events</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#admin">Admin</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Task 4: Section with gradient header -->
+    <section id="events">
+      <h2 class="section-heading">Upcoming Events</h2>
+
+      <div class="events-grid">
+        <!-- Task 8: .eventCard with box model -->
+        <div class="eventCard">
+          <h3>Town Hall Meeting</h3>
+          <p>Join us for the monthly town hall. All residents welcome.</p>
+          <a href="#" class="cta-button">Register Now</a>
+        </div>
+
+        <div class="eventCard">
+          <h3>Community Clean-Up</h3>
+          <p>Help keep our parks and streets clean this Saturday.</p>
+          <a href="#" class="cta-button">Sign Up</a>
+        </div>
+
+        <div class="eventCard">
+          <h3>Farmers Market</h3>
+          <p>Fresh local produce every Sunday at Central Square.</p>
+          <a href="#" class="cta-button">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task 9: Multi-column news bulletin -->
+    <section id="news">
+      <h2 class="section-heading">Community Bulletin</h2>
+      <div class="news-columns">
+        <h3>Road Closure Notice</h3>
+        <p>Main Street will be closed for resurfacing from Monday to Wednesday next week. Residents are advised to use alternative routes during this period. The council apologises for any inconvenience caused and thanks the community for their patience.</p>
+        <h3>New Library Hours</h3>
+        <p>Starting from the first of next month, the Central Library will extend its opening hours to include Sunday afternoons from 12pm to 5pm. Digital membership registration is also now available online via the council website.</p>
+        <h3>Council Budget Consultation</h3>
+        <p>The council invites all residents to participate in the annual budget consultation survey. Your feedback directly shapes how community funds are allocated for parks, roads, and local services in the coming year.</p>
+        <h3>Youth Sports Registration</h3>
+        <p>Registration is now open for the summer youth football, basketball, and swimming programmes. Spaces are limited, so early registration is encouraged. Subsidised places are available for eligible families.</p>
+      </div>
+    </section>
+
+    <!-- Task 7: Admin events table -->
+    <section id="admin">
+      <h2 class="section-heading">Events Admin Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Town Hall Meeting</td>
+            <td>15 Jul 2025</td>
+            <td>Council Chamber</td>
+            <td>Confirmed</td>
+          </tr>
+          <tr>
+            <td>Community Clean-Up</td>
+            <td>19 Jul 2025</td>
+            <td>Central Park</td>
+            <td>Open</td>
+          </tr>
+          <tr>
+            <td>Farmers Market</td>
+            <td>20 Jul 2025</td>
+            <td>Central Square</td>
+            <td>Confirmed</td>
+          </tr>
+          <tr>
+            <td>Budget Consultation</td>
+            <td>22 Jul 2025</td>
+            <td>Online</td>
+            <td>Open</td>
+          </tr>
+          <tr>
+            <td>Youth Sports Day</td>
+            <td>26 Jul 2025</td>
+            <td>Sports Complex</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Task 8: Form with outline on focus -->
+    <section id="contact">
+      <h2 class="section-heading">Contact Us</h2>
+      <form class="contact-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your name"/>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com"/>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Your message..."></textarea>
+
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 City Council Community Portal. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Accessibility</a></li>
+      <li><a href="#">Sitemap</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

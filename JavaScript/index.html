@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommuniLink - Local Community Event Portal</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- jQuery CDN (Checkpoint 14) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Background Decorative Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <i class="fa-solid fa-people-roof logo-icon"></i>
+        <span>Communi<span class="gradient-text">Link</span></span>
+      </div>
+      <div class="nav-meta">
+        <span id="currentDateBadge" class="meta-badge"><i class="fa-regular fa-calendar-days"></i> Loading date...</span>
+        <span class="meta-badge pulse-badge"><i class="fa-solid fa-circle"></i> Live Portal</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Discover & Connect with Your <span class="gradient-text">Local Community</span></h1>
+      <p>Register for upcoming workshops, music shows, volunteering events, and tech sessions. Keep the local spirit vibrant!</p>
+    </div>
+  </section>
+
+  <!-- Main Workspace -->
+  <main class="container portal-grid">
+    
+    <!-- Left Column: Search & Events list -->
+    <section class="events-section">
+      <div class="controls-bar glass-panel">
+        <!-- Search bar -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <!-- Checkpoint 8: keydown for quick search -->
+          <input type="text" id="eventSearchInput" placeholder="Quick search by name... (Try typing)" autocomplete="off">
+        </div>
+        <!-- Category Filter -->
+        <div class="filter-box">
+          <label for="categoryFilter"><i class="fa-solid fa-filter"></i> Category:</label>
+          <!-- Checkpoint 8: onchange to filter events -->
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="music">Music Events</option>
+            <option value="workshop">Workshops</option>
+            <option value="community">Community Drive</option>
+            <option value="sports">Sports</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loading Spinner (Checkpoint 9) -->
+      <div id="loadingSpinner" class="spinner-container">
+        <div class="spinner"></div>
+        <p>Fetching upcoming events...</p>
+      </div>
+
+      <!-- Events Card Grid (Checkpoint 7) -->
+      <div id="eventsGrid" class="events-grid">
+        <!-- Cards injected dynamically via JS -->
+      </div>
+      
+      <!-- No events message -->
+      <div id="noEventsMessage" class="no-events-panel glass-panel hidden">
+        <i class="fa-solid fa-calendar-xmark large-icon"></i>
+        <h3>No matching events found</h3>
+        <p>Try clearing your filters or typing a different search name.</p>
+        <button id="resetFiltersBtn" class="btn btn-secondary">Reset Filters</button>
+      </div>
+    </section>
+
+    <!-- Right Column: Sidebar (Forms, Stats, Framework benefits) -->
+    <aside class="sidebar-section">
+      
+      <!-- Form Card: Add Event (Checkpoint 6 - CRUD array manipulation) -->
+      <div class="glass-panel sidebar-card">
+        <h3><i class="fa-solid fa-plus-circle text-gradient-icon"></i> Add New Event</h3>
+        <p class="card-subtitle">Organize a new community gathering and add it dynamically.</p>
+        <form id="addEventForm">
+          <div class="form-group">
+            <label for="newEventName">Event Name</label>
+            <input type="text" id="newEventName" placeholder="e.g., Block Block Baking" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="newEventCategory">Category</label>
+              <select id="newEventCategory">
+                <option value="music">Music</option>
+                <option value="workshop" selected>Workshop</option>
+                <option value="community">Community</option>
+                <option value="sports">Sports</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="newEventSeats">Max Seats</label>
+              <input type="number" id="newEventSeats" value="25" min="1" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newEventDate">Date</label>
+            <input type="date" id="newEventDate" required>
+          </div>
+          <div class="form-group">
+            <label for="newEventLocation">Location</label>
+            <input type="text" id="newEventLocation" placeholder="e.g., Civic Center Room 3" required>
+          </div>
+          <div class="form-group">
+            <label for="newEventDesc">Description</label>
+            <textarea id="newEventDesc" rows="3" placeholder="Brief summary of event..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-calendar-plus"></i> Publish Event</button>
+        </form>
+      </div>
+
+      <!-- Stats Card: Closures & Prototype Inspections (Checkpoints 4 & 5) -->
+      <div class="glass-panel sidebar-card">
+        <h3><i class="fa-solid fa-chart-simple text-gradient-icon"></i> Portal Insights & Closures</h3>
+        <p class="card-subtitle">Under-the-hood inspections of registrations & prototypes.</p>
+        
+        <!-- Closure tracker dashboard -->
+        <div class="stats-sub-panel">
+          <h4>Category Registrations (JS Closures)</h4>
+          <p class="stats-desc">Tracks total sign-ups in variables isolated via function scope closure.</p>
+          <div id="closureStatsContainer" class="closure-stats-grid">
+            <div class="closure-stat">
+              <span class="cat-name">Music:</span>
+              <span id="stat-music" class="cat-count">0</span>
+            </div>
+            <div class="closure-stat">
+              <span class="cat-name">Workshop:</span>
+              <span id="stat-workshop" class="cat-count">0</span>
+            </div>
+            <div class="closure-stat">
+              <span class="cat-name">Community:</span>
+              <span id="stat-community" class="cat-count">0</span>
+            </div>
+            <div class="closure-stat">
+              <span class="cat-name">Sports:</span>
+              <span id="stat-sports" class="cat-count">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prototype method checker -->
+        <div class="stats-sub-panel">
+          <h4>Prototype Property Inspection</h4>
+          <p class="stats-desc">Checking availability logic bound on prototype chain.</p>
+          <div class="inspection-box">
+            <code>Event.prototype.checkAvailability = function() {...}</code>
+            <div id="prototypeVerification" class="verification-status">
+              <i class="fa-solid fa-circle-notch fa-spin"></i> Checking prototype...
+            </div>
+          </div>
+        </div>
+
+        <!-- Object.entries display -->
+        <div class="stats-sub-panel">
+          <h4>Object.entries() Sample Data</h4>
+          <p class="stats-desc">Deconstruction of selected event key-value pairs.</p>
+          <div class="object-entries-viewer">
+            <label for="objectSelector">Select Event to Inspect:</label>
+            <select id="objectSelector" class="form-control-sm">
+              <!-- Dynamically populated options -->
+            </select>
+            <div class="console-box">
+              <pre id="objectEntriesCode">// Object.entries(selectedEvent) output shown here</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Framework Benefits Card (Checkpoint 14) -->
+      <div class="glass-panel sidebar-card card-accent-glow">
+        <h3><i class="fa-solid fa-circle-info text-gradient-icon"></i> Framework Advantages</h3>
+        <p class="card-subtitle font-weight-medium">Why migrate from jQuery & Vanilla JS to React or Vue?</p>
+        <ul class="benefits-list">
+          <li>
+            <i class="fa-brands fa-react benefit-icon"></i>
+            <div>
+              <strong>Component State Isolation:</strong> 
+              UI automatically re-renders whenever state changes, eliminating manual DOM queries like <code>querySelector()</code>.
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-cubes benefit-icon"></i>
+            <div>
+              <strong>Virtual DOM Reconciliation:</strong> 
+              Computes minimal changes, avoiding page flashes or complex element reconstruction.
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-code-fork benefit-icon"></i>
+            <div>
+              <strong>Maintainable Architecture:</strong> 
+              Encapsulates styling, structure, and behavior in reusable components instead of giant global scripts.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Registration Modal (Checkpoint 11 - Form Validation & Elements) -->
+  <div id="registerModal" class="modal-overlay hidden">
+    <div class="modal-box glass-panel animated-scale">
+      <div class="modal-header">
+        <h3 id="modalEventTitle">Register for Event</h3>
+        <!-- Checkpoint 14: Close btn uses jQuery handlers -->
+        <button id="closeModalBtn" class="close-btn">&times;</button>
+      </div>
+      
+      <form id="registrationForm" novalidate>
+        <!-- Selected Event ID -->
+        <input type="hidden" id="regEventId" name="eventId">
+        
+        <div class="form-group">
+          <label for="regUserName">Full Name <span class="required">*</span></label>
+          <input type="text" id="regUserName" name="userName" placeholder="Your Name" required>
+          <div class="inline-error" id="err-regUserName"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="regUserEmail">Email Address <span class="required">*</span></label>
+          <input type="email" id="regUserEmail" name="email" placeholder="you@example.com" required>
+          <div class="inline-error" id="err-regUserEmail"></div>
+          <div class="input-tip">Tip: Enter <code>error@test.com</code> to simulate API server errors.</div>
+        </div>
+
+        <!-- Display availability inside modal -->
+        <div class="modal-avail-card">
+          <div class="avail-row">
+            <span>Seats Available:</span>
+            <strong id="modalSeatsCount">--</strong>
+          </div>
+          <div class="progress-bar">
+            <div id="modalSeatsProgress" class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Form submission states -->
+        <div id="formFeedback" class="form-feedback hidden">
+          <!-- Text dynamically loaded -->
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="cancelRegisterBtn" class="btn btn-secondary">Cancel</button>
+          <!-- Checkpoint 14: jQuery binds to submit actions -->
+          <button type="submit" id="registerBtn" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Registration</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 CommuniLink Event Portal. Built using vanilla JS, CSS, and jQuery.</p>
+      <div class="footer-links">
+        <a href="#" onclick="alert('Demo Help and instructions. Navigate using filters and enter values in forms.')">Portal Help</a>
+        <span>|</span>
+        <a href="#" onclick="console.log('Opened debug console logs'); alert('Press F12 to inspect Network tab for mock POST calls!')">Inspector Tools</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Logic Script (Checkpoint 1) -->
+  <script src="main.js"></script>
+</body>
+</html>

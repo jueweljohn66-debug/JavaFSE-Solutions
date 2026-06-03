@@ -1,0 +1,397 @@
+/* ============================================
+   styles.css — City Council Community Portal
+   All tasks: 1–11
+   ============================================ */
+
+
+/* ─── Task 3: Universal selector reset ─── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ─── Task 5: Font setup ─── */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1a1a2e;
+}
+
+
+/* ─── Task 3: Element selector — all h2 ─── */
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ─── Task 3: Grouping selector — h3 and p ─── */
+h3, p {
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+/* ─── Task 3: ID selector — #mainHeader ─── */
+#mainHeader {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  color: white;
+  padding: 2rem 2.5rem 1.5rem;
+}
+
+#mainHeader p {
+  /* Task 5: text properties */
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+
+/* ─── Task 6: Nav list — remove bullets, horizontal layout ─── */
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-menu li {
+  padding: 0.25rem 0;
+  margin: 0;
+}
+
+/* ─── Task 6: Link pseudo-classes ─── */
+.nav-menu a:link {
+  color: #a8d8ea;
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.nav-menu a:visited {
+  color: #c9b8e8;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.nav-menu a:active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+
+/* ─── Layout: main content area ─── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+
+/* ─── Task 4: Gradient section headings ─── */
+.section-heading {
+  background: linear-gradient(90deg, #0f3460, #e94560);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-family: 'Playfair Display', serif;
+  /* Task 5: text-transform */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ─── Task 8: .eventCard — box model ─── */
+.events-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Task 3: Class selector .eventCard */
+.eventCard {
+  background-color: #ffffff;
+  border: 1px solid #dde3ed;
+  border-left: 4px solid #0f3460;
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 0.5rem;
+  flex: 1 1 260px;
+  /* Task 8: box model spacing */
+}
+
+.eventCard h3 {
+  color: #0f3460;
+  margin-bottom: 0.5rem;
+}
+
+.eventCard p {
+  /* Task 5: typography */
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+
+/* ─── Task 2: CTA button (formatted with comments) ─── */
+
+/* Style for main CTA button */
+.cta-button {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+
+/* ─── Task 9: Multi-column news bulletin ─── */
+.news-columns {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #dde3ed;
+}
+
+.news-columns h3 {
+  color: #0f3460;
+  break-after: avoid;   /* keep heading with its paragraph */
+}
+
+.news-columns p {
+  font-size: 0.92rem;
+  color: #4a5568;
+  text-align: justify;
+}
+
+
+/* ─── Task 7: Table styling ─── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #0f3460;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+td {
+  padding: 0.7rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+  color: #2d3748;
+}
+
+/* Task 7: Zebra striping */
+tbody tr:nth-child(even) {
+  background-color: #f0f4fb;
+}
+
+tbody tr:hover {
+  background-color: #e8f0fe;
+}
+
+
+/* ─── Task 8: Contact form — outline on focus ─── */
+.contact-form {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 8px;
+  border: 1px solid #dde3ed;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2d3748;
+  margin-top: 0.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a2e;
+  background: #fafafa;
+  /* Task 8: outline on focus applied below */
+}
+
+/* Task 8: outline to highlight focused fields */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid #007BFF;
+  outline-offset: 2px;
+  border-color: #007BFF;
+  background: #ffffff;
+}
+
+.contact-form button {
+  margin-top: 0.75rem;
+  align-self: flex-start;
+}
+
+
+/* ─── Footer ─── */
+footer {
+  background-color: #1a1a2e;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.88rem;
+}
+
+.footer-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.6rem;
+  padding: 0;
+}
+
+.footer-links a:link,
+.footer-links a:visited {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+/* ─── Task 8: visibility vs display demo (applied to .hidden-demo if used) ─── */
+/* visibility: hidden — hides element but keeps its space in layout */
+/* display: none    — hides element AND removes its space entirely  */
+
+
+/* ─── Task 10: Media queries for responsiveness ─── */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+
+  /* Stack nav links vertically */
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-menu a:link,
+  .nav-menu a:visited {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Reduce heading sizes */
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-heading {
+    font-size: 1rem;
+  }
+
+  /* Stack event cards */
+  .events-grid {
+    flex-direction: column;
+  }
+
+  .eventCard {
+    flex: 1 1 100%;
+  }
+
+  /* Single column news on small screens */
+  .news-columns {
+    column-count: 1;
+  }
+
+  /* Fluid layout */
+  main {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.82rem;
+  }
+
+  td, th {
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Fluid image sizes (if any are added) */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile only */
+@media (max-width: 480px) {
+  #mainHeader {
+    padding: 1.2rem 1rem 1rem;
+  }
+
+  #mainHeader h1 {
+    font-size: 1.4rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-sass-showcase",
+  "version": "1.0.0",
+  "description": "Showcase of Bootstrap 5 exercises with Sass customization",
+  "main": "index.html",
+  "scripts": {
+    "build-css": "sass scss/custom.scss dist/css/custom-bootstrap.css --no-source-map",
+    "build": "npm run build-css",
+    "start": "npx http-server ."
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "sass": "^1.83.0"
+  }
+}

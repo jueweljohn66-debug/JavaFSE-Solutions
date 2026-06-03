@@ -1,0 +1,62 @@
+[
+  {
+    "id": "music-01",
+    "name": "Symphony Under the Stars",
+    "date": "2026-07-15",
+    "category": "music",
+    "location": "Central Community Park Amphitheater",
+    "seatsAvailable": 45,
+    "maxSeats": 100,
+    "description": "An enchanting evening featuring live orchestral performances under the open sky. Bring your picnic blankets and enjoy classical masterpieces."
+  },
+  {
+    "id": "workshop-01",
+    "name": "Artisanal Baking Masterclass",
+    "date": "2026-08-05",
+    "category": "workshop",
+    "location": "Community Kitchen & Lounge",
+    "seatsAvailable": 12,
+    "maxSeats": 15,
+    "description": "Learn the secrets of sourdough and pastry making from award-winning baker chef Claire. All ingredients and tools provided."
+  },
+  {
+    "id": "community-01",
+    "name": "Eco-Friendly Gardening Drive",
+    "date": "2026-06-20",
+    "category": "community",
+    "location": "Urban Roots Shared Garden",
+    "seatsAvailable": 0,
+    "maxSeats": 30,
+    "description": "Help us plant native shrubs and create new pollination hubs. This event is currently fully registered, but waitlist spots are open."
+  },
+  {
+    "id": "sports-01",
+    "name": "Spring Fun Run & Marathon",
+    "date": "2026-05-10",
+    "category": "sports",
+    "location": "Riverside Walking Trails",
+    "seatsAvailable": 25,
+    "maxSeats": 150,
+    "description": "A past event where the neighborhood ran 5k and raised funds for the local library."
+  },
+  {
+    "id": "music-02",
+    "name": "Indie Acoustic Sunset Session",
+    "date": "2026-09-02",
+    "category": "music",
+    "location": "High-Line Rooftop Deck",
+    "seatsAvailable": 8,
+    "maxSeats": 40,
+    "description": "Unwind with mellow melodies from regional indie songwriters. Limited general admission seating available."
+  },
+  {
+    "id": "workshop-02",
+    "name": "Introduction to Web Development",
+    "date": "2026-07-22",
+    "category": "workshop",
+    "location": "Local Tech Hub - Classroom B",
+    "seatsAvailable": 20,
+    "maxSeats": 20,
+    "description": "A beginner-friendly coding session covering HTML, CSS, and basic JavaScript. Bring your laptop!"
+  }
+]

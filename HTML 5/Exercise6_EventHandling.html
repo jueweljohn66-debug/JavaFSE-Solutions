@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Handling</title>
+</head>
+<body>
+
+Phone Number:
+<input type="text"
+       id="phone"
+       onblur="validatePhone()">
+
+<br><br>
+
+Event Type:
+
+<select onchange="showFee(this)">
+<option value="">Select Event</option>
+<option data-fee="Free">Music Fest</option>
+<option data-fee="50">Workshop</option>
+</select>
+
+<p id="fee"></p>
+
+<img src="event.jpg"
+     width="200"
+     ondblclick="enlarge(this)">
+
+<br><br>
+
+<textarea
+id="feedback"
+onkeyup="countCharacters()">
+</textarea>
+
+<p id="count">0 Characters</p>
+
+<button onclick="submitFeedback()">
+Submit
+</button>
+
+<script>
+
+function validatePhone(){
+alert("Phone validated");
+}
+
+function showFee(selectBox){
+
+let fee =
+selectBox.options[
+selectBox.selectedIndex
+].dataset.fee;
+
+document.getElementById("fee")
+.innerHTML="Fee: "+fee;
+
+}
+
+function enlarge(image){
+image.width=400;
+}
+
+function countCharacters(){
+
+let length=
+document.getElementById("feedback")
+.value.length;
+
+document.getElementById("count")
+.innerHTML=
+length+" Characters";
+
+}
+
+function submitFeedback(){
+alert("Feedback Submitted");
+}
+
+</script>
+
+</body>
+</html>
